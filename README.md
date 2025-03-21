@@ -98,3 +98,26 @@ export default defineConfig({
   "include": ["vite.config.ts"]
 }
 
+
+
+📌 Kiedy używać it, a kiedy test?
+it jest bardziej naturalne, gdy piszesz testy w stylu BDD (Behavior-Driven Development), np.:
+
+js
+Kopiuj
+Edytuj
+it("renders the button correctly", () => {
+  render(<Button />);
+  expect(screen.getByRole("button")).toBeInTheDocument();
+});
+Można to czytać jak zdanie: It renders the button correctly.
+
+test jest bardziej ogólne i często używane w standardowych testach jednostkowych:
+
+js
+Kopiuj
+Edytuj
+test("renders the button correctly", () => {
+  render(<Button />);
+  expect(screen.getByRole("button")).toBeInTheDocument();
+});
